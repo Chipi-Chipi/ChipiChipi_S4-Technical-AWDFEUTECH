@@ -30,3 +30,18 @@ function closePopup2() {
 }
 
 /*pat*/
+document.addEventListener('DOMContentLoaded', function() {
+    var scrollTopButton = document.getElementById('scrollToTopButton');
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollTopButton.style.display = "flex";
+        } else {
+            scrollTopButton.style.display = "none";
+        }
+    };
+
+    scrollTopButton.addEventListener('click', function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+});
